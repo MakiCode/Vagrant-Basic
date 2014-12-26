@@ -31,9 +31,17 @@ runDirectory "$first"
 echo  "mysql-server mysql-server/root_password password $mysql_password" | sudo debconf-set-selections #Cahnge the word 'vagrant' here to change the password.
 echo  "mysql-server mysql-server/root_password_again password $mysql_password" | sudo debconf-set-selections # Remember to do that here to!
 
+apt-get install python-software-properties
+
+add-apt-repository ppa:ondrej/php5-5.6
+
 apt-get update
 
-apt-get -y install apache2 php5 mysql-server mysql-client php5-mysqlnd php5-xdebug vim
+apt-get dist-upgrade
+
+apt-get upgrade
+
+apt-get -y install apache2 php5 mysql-server mysql-client php5-mysqlnd php5-xdebug vim git
 
 echo 'zend_extension="/usr/lib/php5/20100525/xdebug.so"' >> /etc/php5/apache2/php.ini
 echo 'xdebug.remote_enable=1' >> /etc/php5/apache2/php.ini
