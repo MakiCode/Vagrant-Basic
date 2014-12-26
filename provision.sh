@@ -1,8 +1,8 @@
 #!/bin/bash
 
 mysql_password=vagrant
-first=../first
-last=../last
+first=./first
+last=./last
 
 function runDirectory() {
   if [ -z ${1+x} ]; then
